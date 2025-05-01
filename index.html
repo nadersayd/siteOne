@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nader Sayed</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Icons via CDN -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- jQuery via CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            transition: 0.4s;
+        }
+        /* Smooth transition for mobile menu */
+        .mobile-nav {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .mobile-nav.open {
+            max-height: 500px;
+            /* Adjust based on your content */
+            transition: max-height 0.3s ease-in;
+        }
+
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .slider-card {
+            transition: all 0.3s ease;
+        }
+
+        .slider-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            color: #701a75;
+            /* fuchsia-950 */
+        }
+    </style>
+</head>
+
+<body class="bg-white container">
+    <header class="shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo/Title with blue-600 color -->
+                <h1 class="text-2xl md:text-3xl font-bold text-blue-600">Nader Sayed</h1>
+
+                <!-- Desktop Navigation (hidden on mobile) -->
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#" class="text-black hover:text-blue-600 font-medium">Home</a></li>
+                        <li><a href="#" class="text-black hover:text-blue-600 font-medium">About</a></li>
+                        <li><a href="#" class="text-black hover:text-blue-600 font-medium">Services</a></li>
+                        <li><a href="#" class="text-black hover:text-blue-600 font-medium">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Mobile menu button (hidden on desktop) -->
+                <button id="mobile-menu-button" class="md:hidden text-black focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation (hidden by default) -->
+            <nav class="md:hidden mobile-nav bg-black text-white rounded-lg">
+                <ul class="flex flex-col space-y-3 py-4 px-4">
+                    <li><a href="#" class="block hover:bg-gray-800 px-3 py-2 rounded">Home</a></li>
+                    <li><a href="#" class="block hover:bg-gray-800 px-3 py-2 rounded">About</a></li>
+                    <li><a href="#" class="block hover:bg-gray-800 px-3 py-2 rounded">Services</a></li>
+                    <li><a href="#" class="block hover:bg-gray-800 px-3 py-2 rounded">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- START MAIN SECTION -->
+    <main class="flex h-[92.8vh] w-full ">
+        <!-- Red Section -->
+        <section class="color-section bg-fuchsia-950 text-white py-[300px] pl-8 w-full sm:w-[50%] ">
+            <div class="px-4 my-[10px]">
+                <h1 class="text-4xl font-bold mb-4">YOU CAN <br>
+                    HIRE FREELANCER <br>
+                    HERE</h1>
+                <p class="text-xl w-[80%]">It is a long established fact that a reader will be distracted by
+                    the readable content of a page</p>
+                <div class="flex flex-wrap justify-start gap-4 mt-[30px]">
+                    <!-- Primary Button -->
+                    <button
+                        class="btn bg-white text-blue-600 font-bold py-1 px-3 rounded-lg shadow-lg hover:shadow-xl hover:bg-gray-100">
+                        About Us
+                    </button>
+
+                    <!-- Secondary Button -->
+                    <button
+                        class="btn bg-transparent border-2 border-white text-white font-bold py-1 px-3 rounded-lg hover:bg-white hover:bg-opacity-10">
+                        Get A Quote
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blue Section -->
+        <section class="color-section w-[50%]  bg-gray-400 text-white py-[150px] hidden sm:block">
+            <img src="images/slider-img.png" alt="" class="w-[100%]">
+        </section>
+    </main>
+    <!-- END MAIN SECTION -->
+
+    <!-- START TWO SECTION -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Image Div -->
+                <div class="w-full lg:w-1/2">
+                    <img src="./images/experience-img.jpg" alt="Featured Image"
+                        class="w-full h-auto rounded-xl shadow-2xl object-cover" style="min-height: 400px;">
+                </div>
+
+                <!-- Content Div -->
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-6">BEST EXPERINCED FREELANCER HERE</h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        It is a long established fact that a reader will be distracted by the readable content of a page
+                        when looking at its
+                        layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+                        letters, as
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <!-- Primary Button -->
+                        <button
+                            class="px-6 py-3 bg-fuchsia-950 hover:bg-fuchsia-900 text-white font-semibold rounded-lg shadow-md transition duration-300 transform hover:-translate-y-1">
+                            Read Me
+                        </button>
+
+                        <!-- Secondary Button -->
+                        <button
+                            class="px-6 py-3 border-2 border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white font-semibold rounded-lg transition duration-300">
+                            Hire
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END TWO SECTION -->
+
+    <!-- START THREE SECTION -->
+    <div class="w-full py-16 px-4 text-center bg-[#1cbbb4]">
+        <!-- Title Section -->
+        <div class="mb-12">
+            <h2 class="text-4xl font-bold text-white mb-6 relative inline-block">
+                CATEGORY
+                <span class="absolute bottom-[-10px] left-0 w-full h-1 bg-white"></span>
+            </h2>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
+            <!-- Card 1 -->
+            <div class="card flex flex-col items-center w-full sm:w-[300px] p-6 transition-all hover:scale-105">
+                <img src="images/c1.png" class="w-24 h-24 object-contain mb-4" alt="Design & Arts">
+                <h4 class="text-white text-xl font-semibold">Design & Arts</h4>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card flex flex-col items-center w-full sm:w-[300px] p-6 transition-all hover:scale-105">
+                <img src="images/c2.png" class="w-22 h-22 object-contain mb-4" alt="Web Development">
+                <h4 class="text-white text-xl font-semibold">Web Development</h4>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card flex flex-col items-center w-full sm:w-[300px] p-6 transition-all hover:scale-105">
+                <img src="images/c3.png" class="w-22 h-22 object-contain mb-4" alt="SEO Marketing">
+                <h4 class="text-white text-xl font-semibold">SEO Marketing</h4>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card flex flex-col items-center w-full sm:w-[300px] p-6 transition-all hover:scale-105">
+                <img src="images/c4.png" class="w-24 h-24 object-contain mb-4" alt="Video Editing">
+                <h4 class="text-white text-xl font-semibold">Video Editing</h4>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card flex flex-col items-center w-full sm:w-[300px] p-6 transition-all hover:scale-105">
+                <img src="images/c5.png" class="w-22 h-22 object-contain mb-4" alt="Logo Design">
+                <h4 class="text-white text-xl font-semibold">Logo Design</h4>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card flex flex-col items-center w-full sm:w-[300px] p-6 transition-all hover:scale-105">
+                <img src="images/c6.png" class="w-22 h-22 object-contain mb-4" alt="Game Design">
+                <h4 class="text-white text-xl font-semibold">Game Design</h4>
+            </div>
+        </div>
+    </div>
+    <!-- END THREE SECTION -->
+
+    <!-- START FOUR SECTION -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <div class="flex flex-col items-center gap-12">
+                <!-- Image -->
+                <div class="w-full max-w-lg">
+                    <img src="images/about-img.jpg" alt="About Spering Company"
+                        class="w-full h-auto rounded-lg shadow-xl object-cover">
+                </div>
+
+                <!-- Content -->
+                <div class="w-full text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">ABOUT SPERING COMPANY</h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto">
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                        alteration in some form, by injected humour, or randomised words which don't look even slightly
+                        believable. If youThere are many variations of passages of Lorem Ipsum available, but the
+                        majority
+                        have suffered alteration in some form, by injected humour, or randomised words which don't look
+                        even
+                        slightly believable. If you
+                    </p>
+
+                    <!-- Primary Button -->
+                    <button
+                        class="px-6 py-3 bg-fuchsia-950 hover:bg-fuchsia-900 text-white font-semibold rounded-lg shadow-md transition duration-300 transform hover:-translate-y-1">
+                        Read Me
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END FOUR SECTION -->
+
+    <!-- START FIVE SECTION -->
+    <section class="py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <!-- Title -->
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+                WORK FREELANCER HAS DONE
+                <div class="w-20 h-1 bg-fuchsia-950 mx-auto mt-4"></div>
+            </h2>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Stat 1 -->
+                <div class="stat-card bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="text-4xl font-bold text-fuchsia-950 mb-2 counter" data-target="250">0</div>
+                    <div class="text-lg text-gray-600">Million</div>
+                    <div class="text-sm text-gray-500 mt-2">Paid to Freelancers</div>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="stat-card bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="text-4xl font-bold text-fuchsia-950 mb-2 counter" data-target="2">0</div>
+                    <div class="text-lg text-gray-600">Million</div>
+                    <div class="text-sm text-gray-500 mt-2">Paid Invoices</div>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="stat-card bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="text-4xl font-bold text-fuchsia-950 mb-2 counter" data-target="180">0</div>
+                    <div class="text-lg text-gray-600">Countries</div>
+                    <div class="text-sm text-gray-500 mt-2">Worldwide Freelancer</div>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="stat-card bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="text-4xl font-bold text-fuchsia-950 mb-2 counter" data-target="98">0</div>
+                    <div class="text-lg text-gray-600">%</div>
+                    <div class="text-sm text-gray-500 mt-2">Customer Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END FIVE SECTION -->
+
+    <!-- START SIX SECTION -->
+    <div class="py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <!-- Title -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    OUR SERVICES
+                    <div class="w-20 h-1 bg-fuchsia-950 mx-auto mt-4"></div>
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Discover our range of professional services designed to meet your needs.
+                </p>
+            </div>
+
+            <!-- Slider -->
+            <div class="slider">
+                <!-- Slide 1 -->
+                <div class="px-4 my-[10px]">
+                    <div class="slider-card bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold text-fuchsia-950 mb-3">Web Development</h3>
+                        <p class="text-gray-600">
+                            Custom website development tailored to your business needs with modern technologies and
+                            responsive design.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="px-4 my-[10px]">
+                    <div class="slider-card bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold text-fuchsia-950 mb-3">Graphic Design</h3>
+                        <p class="text-gray-600">
+                            Stunning visual designs that communicate your brand message effectively and attract
+                            customers.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="px-4 my-[10px]">
+                    <div class="slider-card bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold text-fuchsia-950 mb-3">SEO Optimization</h3>
+                        <p class="text-gray-600">
+                            Improve your search engine rankings and drive more organic traffic to your website.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="px-4 my-[10px]">
+                    <div class="slider-card bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold text-fuchsia-950 mb-3">Content Writing</h3>
+                        <p class="text-gray-600">
+                            High-quality, engaging content that resonates with your audience and boosts conversions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="px-4 my-[10px]">
+                    <div class="slider-card bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-bold text-fuchsia-950 mb-3">Social Media</h3>
+                        <p class="text-gray-600">
+                            Strategic social media management to grow your audience and increase engagement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END SIX SECTION -->
+
+    <!-- START FOOTER -->
+    <footer class="px-5 py-10 md:px-10 lg:px-20 bg-black">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <!-- USEFUL LINK SECTION -->
+            <div>
+                <h3 class="text-lg font-semibold text-gray-100 mb-5 uppercase">USEFUL LINK</h3>
+                <table class="w-full">
+                    <tbody>
+                        <tr>
+                            <td class="py-1 font-medium text-blue-400">Home</td>
+                            <td class="py-1 text-gray-200">Readable content of a page</td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 font-medium text-blue-400">About</td>
+                            <td class="py-1 text-gray-200">when looking at its</td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 font-medium text-blue-400">Work</td>
+                            <td class="py-1 text-gray-200">layoutreadable content of a</td>
+                        </tr>
+                        <tr>
+                            <td class="py-1 font-medium text-blue-400">Category</td>
+                            <td class="py-1 text-gray-200">page when looking at its layout</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- OFFICES SECTION -->
+            <div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-5 uppercase">OFFICES</h3>
+                <p class="text-gray-200 mb-2">Readable content of a page</p>
+                <p class="text-gray-200 mb-2">when looking at its</p>
+                <p class="text-gray-200 mb-2">layoutreadable content of a</p>
+                <p class="text-gray-200">page when looking at its layout</p>
+            </div>
+
+            <!-- INFORMATION SECTION -->
+            <div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-5 uppercase">INFORMATION</h3>
+                <p class="text-gray-200 mb-2">Readable content of a page when looking at its</p>
+                <p class="text-gray-200 mb-2">layoutreadable content of a page</p>
+                <p class="text-gray-200">when looking at its layout</p>
+            </div>
+
+            <!-- NEWSLETTER SECTION -->
+            <div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-5 uppercase">NEWSLETTER</h3>
+                <input type="email" placeholder="Email"
+                    class="w-full px-3 py-2 mb-3 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-gray-400">
+                <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-700 transition-colors">
+                    SUBSCRIBE
+                </button>
+            </div>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div
+            class="max-w-7xl mx-aut mt-10 pt-6 border-t border-gray-200 text-center text-gray-200 flex flex-row flex-wrap justify-between items-center">
+            <p class="mb-1 flex items-center justify-center"><span class="mx-[15px] material-icons">location_on</span>19
+                Giza Cairo</p>
+            <p class="mb-1 flex items-center justify-center"><span
+                    class="mx-[15px] material-icons">email</span>nadersayed@gmail.com.com</p>
+            <p class="mb-1 flex items-center justify-center"><span class="mx-[15px] material-icons">call</span>Call
+                +201142601520</p>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <!-- SCRIPTING -->
+    <script>
+        $(document).ready(function () {
+            // Toggle mobile menu
+            $('#mobile-menu-button').click(function () {
+                $('.mobile-nav').toggleClass('open');
+
+                // Change menu icon
+                const icon = $(this).find('svg');
+                if ($('.mobile-nav').hasClass('open')) {
+                    icon.html('<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>');
+                } else {
+                    icon.html('<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>');
+                }
+            });
+
+            // Close mobile menu when clicking a link
+            $('.mobile-nav a').click(function () {
+                $('.mobile-nav').removeClass('open');
+                $('#mobile-menu-button svg').html('<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>');
+            });
+
+            // Handle window resize
+            $(window).resize(function () {
+                if ($(window).width() >= 768) {
+                    $('.mobile-nav').removeClass('open');
+                    $('#mobile-menu-button svg').html('<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>');
+                }
+            });
+            $('.counter').each(function () {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).data('target')
+                }, {
+                    duration: 2000,
+                    easing: 'swing',
+                    step: function (now) {
+                        if ($(this).data('target') > 100) {
+                            $(this).text(Math.ceil(now));
+                        } else {
+                            $(this).text(Math.ceil(now) + (now % 1 > 0 ? '.' + Math.floor((now % 1) * 10) : ''));
+                        }
+                    }
+                });
+            });
+
+            // Add hover effects
+            $('.stat-card').hover(
+                function () {
+                    $(this).css('box-shadow', '0 10px 25px rgba(0, 0, 0, 0.1)');
+                },
+                function () {
+                    $(this).css('box-shadow', '0 4px 6px rgba(0, 0, 0, 0.1)');
+                }
+            );
+            $('.slider').slick({
+                dots: true,
+                arrows: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 640,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+
+            // Hover effects
+            $('.slider-card').hover(
+                function () {
+                    $(this).css('box-shadow', '0 10px 25px rgba(0, 0, 0, 0.1)');
+                },
+                function () {
+                    $(this).css('box-shadow', '0 4px 6px rgba(0, 0, 0, 0.1)');
+                }
+            );
+        });
+    </script>
+</body>
+
+</html>
